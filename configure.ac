@@ -22,11 +22,13 @@ dnl
 dnl Process this file with autoconf to create configure.
 
 AC_PREREQ([2.57])
-AC_INIT(font-alias, [7.0], [xorg@freedestkop.org], font-alias)
+AC_INIT(font-alias, [0.99.0], [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg], font-alias)
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
 AM_MAINTAINER_MODE
 
 AC_PROG_INSTALL
+
+XORG_RELEASE_VERSION
 
 AC_OUTPUT([Makefile
            100dpi/Makefile
