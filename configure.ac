@@ -30,12 +30,12 @@ AC_PROG_INSTALL
 
 m4_ifdef([AS_HELP_STRING], , [m4_define([AS_HELP_STRING], m4_defn([AC_HELP_STRING]))])
 
-DEFAULT_ALIASDIR=${libdir}/X11/fonts
-AC_ARG_WITH(aliasdir,
-	AS_HELP_STRING([--with-aliasdir=ALIASDIR], [Path to install font encodings]),
-	[ALIASDIR="$withval"],
-	[ALIASDIR="$DEFAULT_ALIASDIR"])
-AC_SUBST(ALIASDIR)
+DEFAULT_TOPFONTDIR=${libdir}/X11/fonts
+AC_ARG_WITH(top-fontdir,
+	AS_HELP_STRING([--with-top-fontdir=<path>], [Path to top level font directory]),
+	[TOPFONTDIR="$withval"],
+	[TOPFONTDIR="$DEFAULT_TOPFONTDIR"])
+AC_SUBST(TOPFONTDIR)
 
 XORG_RELEASE_VERSION
 
