@@ -19,7 +19,7 @@
 #  NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
 #  CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-aliasdir = $(libdir)/X11/fonts/75dpi
+aliasdir = @ALIASDIR@/75dpi
 alias_DATA = fonts.alias
 
 EXTRA_DIST = $(alias_DATA)

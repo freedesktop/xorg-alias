@@ -28,6 +28,15 @@ AM_MAINTAINER_MODE
 
 AC_PROG_INSTALL
 
+m4_ifdef([AS_HELP_STRING], , [m4_define([AS_HELP_STRING], m4_defn([AC_HELP_STRING]))])
+
+DEFAULT_ALIASDIR=${libdir}/X11/fonts
+AC_ARG_WITH(aliasdir,
+	AS_HELP_STRING([--with-aliasdir=ALIASDIR], [Path to install font encodings]),
+	[ALIASDIR="$withval"],
+	[ALIASDIR="$DEFAULT_ALIASDIR"])
+AC_SUBST(ALIASDIR)
+
 XORG_RELEASE_VERSION
 
 AC_OUTPUT([Makefile

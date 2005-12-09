@@ -1,0 +1,8 @@
+2005-12-09  Kevin E. Martin  <kem-at-freedesktop-dot-org>
+
+	* 100dpi/Makefile.am:
+	* 75dpi/Makefile.am:
+	* configure.ac:
+	* cyrillic/Makefile.am:
+	* misc/Makefile.am:
+	Bug #5293: Make aliasdir configurable (Donnie Berkholz).
