@@ -26,18 +26,19 @@ AC_INIT(font-alias, [1.0.1], [https://bugs.freedesktop.org/enter_bug.cgi?product
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
 AM_MAINTAINER_MODE
 
+# Require xorg-macros: XORG_CHANGELOG
+m4_ifndef([XORG_MACROS_VERSION], [AC_FATAL([must install xorg-macros 1.2 or later before running autoconf/autogen])])
+XORG_MACROS_VERSION(1.2)
 AC_PROG_INSTALL
 
-m4_ifdef([AS_HELP_STRING], , [m4_define([AS_HELP_STRING], m4_defn([AC_HELP_STRING]))])
-
-DEFAULT_TOPFONTDIR=${libdir}/X11/fonts
-AC_ARG_WITH(top-fontdir,
-	AS_HELP_STRING([--with-top-fontdir=<path>], [Path to top level font directory]),
-	[TOPFONTDIR="$withval"],
-	[TOPFONTDIR="$DEFAULT_TOPFONTDIR"])
+topfontdir=${libdir}/X11/fonts
+AC_ARG_WITH(top-fontdir, AC_HELP_STRING([--with-top-fontdir=<pathname>],
+	[Path to toplevel font directory]), [topfontdir="$withval"])
+TOPFONTDIR="$topfontdir"
 AC_SUBST(TOPFONTDIR)
 
 XORG_RELEASE_VERSION
+XORG_CHANGELOG
 
 AC_OUTPUT([Makefile
            100dpi/Makefile
