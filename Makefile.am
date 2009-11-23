@@ -21,6 +21,7 @@
 
 SUBDIRS = 100dpi 75dpi cyrillic misc
 
+MAINTAINERCLEANFILES = ChangeLog INSTALL
 
 .PHONY: ChangeLog INSTALL
 
