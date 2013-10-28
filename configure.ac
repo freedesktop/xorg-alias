@@ -48,8 +48,9 @@ AC_ARG_WITH(top-fontdir, AC_HELP_STRING([--with-top-fontdir=<pathname>],
 	[AC_MSG_ERROR([--with-top-fontdir is obsolete, use --with-fontrootdir instead])])
 
 
-AC_OUTPUT([Makefile
+AC_CONFIG_FILES([Makefile
            100dpi/Makefile
            75dpi/Makefile
            cyrillic/Makefile
            misc/Makefile])
+AC_OUTPUT
